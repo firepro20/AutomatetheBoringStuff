@@ -1,15 +1,20 @@
 import random
 
+
 def hello():
     print('Hello mate!')
 
 
 hello()
 
+
 def helloUser(name):
-    print('Hello ' + str(name)) # variables that have arguments assigned to them are parameters. name is a parameter of the helloUser function
+    # variables that have arguments assigned to them are parameters. name is a parameter of the helloUser function
+    print('Hello ' + str(name))
+
 
 helloUser('22')
+
 
 def getAnswer(answerNumber):
        if answerNumber == 1:
@@ -31,14 +36,40 @@ def getAnswer(answerNumber):
        elif answerNumber == 9:
            return 'Very doubtful'
 
+
 r = random.randint(1, 9)
 fortune = getAnswer(r)
 print(fortune)
 
 # can also be shortened to print(getAnswer(random.randint(1,9))) ask if range is inclusive of start and end values
 
-print('Hello', end='') # by default the print() function always add a new line at the end. supplying the end argument to print function can change this behaviour
-print('World') # will be added / concatinated with Hello
+# by default the print() function always add a new line at the end. supplying the end argument to print function can change this behaviour
+print('Hello', end='')
+print('World')  # will be added / concatinated with Hello
 
 # similarly, multiple string values passed to print() will be automagically separated
 print('cats', 'dogs', 'rabbits')
+
+# Functions
+
+
+def a():
+    print('a() starts')
+    b()
+    d()
+    print('a() returns')
+
+def b():
+    print('b() starts')
+    c()
+    print('b() returns')
+
+def c():
+    print('c() starts')
+    print('c() returns')
+
+def d():
+    print('d() starts')
+    print('d() returns')
+
+a()
