@@ -73,3 +73,68 @@ def d():
     print('d() returns')
 
 a()
+
+# If you try to use a local variable in a function before you assign a value to it, as in the following program,
+# Python will give you an error. 
+
+""" def spam():
+    
+    print(eggs)
+    eggs = 'spam local'
+    
+eggs = 'global'
+spam() """
+
+"""
+This error happens because Python sees that there is an assignment statement 
+for eggs in the spam() function and, therefore, considers eggs to be local. 
+But because print(eggs) is executed before eggs is assigned anything, the 
+local variable eggs doesn’t exist. Python will not fall back to using the global 
+eggs variable.
+"""
+
+# Exception handling
+
+def spam(divideBy):
+	try:
+		return 42/divideBy
+	except ZeroDivisionError:
+		print('Error: Invalid Argument.')
+print(spam(2))
+print(spam(12))
+print(spam(0)) # returns None as default return value for a function
+print(spam(1))
+
+def spam(divideBy):
+    return 42 / divideBy
+
+try:
+    print(spam(2))
+    print(spam(12))
+    print(spam(0))
+    print(spam(1))
+except ZeroDivisionError:
+    print('Error: Invalid argument.') # best way of doing it
+
+# The Collatz Sequence
+
+def collatz(number):
+    if (number <= 0):
+        return 1
+    elif ((number % 2) == 0):
+        print(number // 2)
+        return number // 2
+    elif((number % 2) == 1):
+        print(3 * number + 1)
+        return 3 * number + 1
+    else:
+        return 1
+        
+try:
+    mynumber = int(input('Enter a number:'))
+    output = 0
+    while (mynumber != 1):
+        output = collatz(mynumber)
+        mynumber = output
+except ValueError:
+    print('The input was not a valid integer')
