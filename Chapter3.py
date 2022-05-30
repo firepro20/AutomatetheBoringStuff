@@ -122,10 +122,8 @@ def collatz(number):
     if (number <= 0):
         return 1
     elif ((number % 2) == 0):
-        print(number // 2)
         return number // 2
     elif((number % 2) == 1):
-        print(3 * number + 1)
         return 3 * number + 1
     else:
         return 1
@@ -134,7 +132,7 @@ try:
     mynumber = int(input('Enter a number:'))
     output = 0
     while (mynumber != 1):
-        output = collatz(mynumber)
-        mynumber = output
+        mynumber = collatz(mynumber)
+        print(mynumber)
 except ValueError:
     print('The input was not a valid integer')
