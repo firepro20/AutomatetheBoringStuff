@@ -64,3 +64,22 @@ supplies.insert(1, 'paperclips') # at the index
 supplies.remove('pens')
 
 supplies.sort(reverse=True)
+
+# Character Picture Grid Exercise
+grid = [['.', '.', '.', '.', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['.', 'O', 'O', 'O', 'O', 'O'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.']]
+
+cols = []
+
+for i in range(len(grid)):
+    for j in range(len(grid[0])):
+        print(grid[i][j], end='')
+    print('\n')
+
